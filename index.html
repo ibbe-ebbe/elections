@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOV Elections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#4b2a7b;--purple-dark:#33195a;--accent:#e8b04a;--bg:#f6f4fa;--card:#fff;--text:#1d1830;--muted:#6b6580;--line:#e2dcee}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* header */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--purple)}
+.logo{width:40px;height:40px;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;font:700 14px system-ui}
+nav ul{display:flex;list-style:none;gap:4px}
+nav a,nav summary{display:block;padding:8px 12px;border-radius:6px;cursor:pointer;list-style:none}
+nav a:hover,nav summary:hover{background:var(--bg);color:var(--purple)}
+nav details{position:relative}
+nav details[open]>div{position:absolute;inset-inline-start:0;top:100%;min-width:200px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 8px 24px rgba(51,25,90,.12)}
+.lang{border:1px solid var(--line);padding:2px 10px;border-radius:6px;font:600 13px system-ui}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:20px}
+
+/* banner */
+.banner{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;padding:48px 0}
+.banner h1{font-size:clamp(26px,5vw,40px);line-height:1.5;margin-bottom:8px}
+.banner p{opacity:.85;max-width:560px}
+.btn{display:inline-block;margin-top:20px;background:var(--accent);color:var(--purple-dark);font-weight:700;padding:10px 22px;border-radius:8px}
+
+/* quick links */
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:-28px;position:relative}
+.quick a{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;font-weight:600;color:var(--purple);border-inline-start:4px solid var(--accent)}
+.quick a:hover{background:var(--purple);color:#fff}
+
+/* lists */
+section{margin:40px 0}
+h2{font-size:22px;color:var(--purple);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.list{display:grid;gap:10px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.item:hover{border-color:var(--purple)}
+.item time{color:var(--muted);font-size:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+
+/* footer */
+footer{background:var(--purple-dark);color:#fff;padding:32px 0;margin-top:48px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{opacity:.85}footer a:hover{opacity:1;text-decoration:underline}
+footer small{display:block;margin-top:16px;opacity:.6;width:100%}
+
+@media(max-width:800px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;inset-inline:0;top:64px;background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav details[open]>div{position:static;box-shadow:none;border:0}
+  .cols{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:no-preference){.btn,.quick a,.item{transition:.15s}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/"><span class="logo">BOV</span><span>BOV Elections</span></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><details><summary>About</summary><div><a href="#">Vision / Mission</a><a href="#">Members</a></div></details></li>
+        <li><details><summary>Elections</summary><div><a href="#">Current election</a><a href="#">Results</a></div></details></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#announcements">Announcements</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="lang" href="/dv/">DV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="wrap">
+    <h1>Headline goes here</h1>
+    <p>A short introduction goes here.</p>
+    <a class="btn" href="#">Learn more</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="quick">
+    <a href="#">Check registration</a>
+    <a href="#">Statistics</a>
+    <a href="#">Online services</a>
+    <a href="#">Jobs</a>
+  </div>
+
+  <div class="cols">
+    <section id="announcements">
+      <h2>Announcements</h2>
+      <div class="list">
+        <a class="item" href="#"><span>Announcement title 1</span><time>09 Nov 2026</time></a>
+        <a class="item" href="#"><span>Announcement title 2</span><time>04 Nov 2026</time></a>
+        <a class="item" href="#"><span>Announcement title 3</span><time>01 Nov 2026</time></a>
+      </div>
+    </section>
+    <section id="news">
+      <h2>News</h2>
+      <div class="list">
+        <a class="item" href="#"><span>News title 1</span><time>08 Nov 2026</time></a>
+        <a class="item" href="#"><span>News title 2</span><time>02 Nov 2026</time></a>
+        <a class="item" href="#"><span>News title 3</span><time>29 Oct 2026</time></a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div><strong>BOV Elections</strong><br>Address: Kulhudhuffushi</div>
+    <div>
+      <a href="mailto:info@example.mv">info@example.mv</a><br>
+      <a href="tel:+9600000000">+960 000 0000</a>
+    </div>
+    <div><a href="#">Facebook</a><br><a href="#">Instagram</a></div>
+    <small>&copy; 2026 BOV</small>
+  </div>
+</footer>
+
+</body>
+</html>
 
